@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
   def categories_attributes=(category_attributes)
   	 category_attributes.values.each do |category_attribute|
-  	 	 category = Category.find_by(name: category_attribute[:name]) 
+  	 	 category = Category.find_by(name: category_attribute[:name])
 
        if !category.nil?
          self.categories << category
@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
         self.categories << Category.create(name: category_attribute[:name]) unless category_attribute[:name].empty?
   	   end
      end
-    
+
   end
 
 end
