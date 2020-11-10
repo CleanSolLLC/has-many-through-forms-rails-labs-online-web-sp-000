@@ -7,7 +7,7 @@ Category:
 <p>Content: <%= @post.content %></p>
 
 <% @post.comments.each do |comment| %>
-  <p><%= comment.user.username %> says: <%= comment.content %></p>  
+  <p><%= comment.user.username %> says: <%= comment.content %></p>
 <% end %>
 
 <% @post.comments.select(:user_id).distinct.each do |u| %>
@@ -33,13 +33,3 @@ Select a user or create a new user to associate with a post
   <br/>
   <%= f.submit %>
 <% end %>
-
-
-
-
-
-
-
-
-
-
